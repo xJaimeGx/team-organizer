@@ -1,0 +1,32 @@
+{
+  "name": "team-organizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xJaimeGx/team-organizer.git"
+  },
+  "keywords": [
+    "team",
+    "organizer"
+  ],
+  "author": "Jaime Gutierrez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xJaimeGx/team-organizer/issues"
+  },
+  "homepage": "https://github.com/xJaimeGx/team-organizer#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
+}
