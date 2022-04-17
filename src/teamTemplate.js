@@ -26,10 +26,10 @@ function createCards(team) {
 
 let createManagerCard = (Manager) => {
     return `
-    <div class="card" style="width: 18rem">
-        <div class="card-header">
+    <div class="card m-2" style="width: 20rem">
+        <div class="card-header bg-info">
+            <h6 class="card-text">${Manager.getTitle()}</h6>
             <h3 class="card-title">${Manager.getName()}</h3>
-            <h6 class="card-text"><i class="fa fa-coffee"></i>${Manager.getTitle()}</h6>
         </div>
         <div class="card-body">
             <ul class="list-group">
@@ -44,10 +44,10 @@ let createManagerCard = (Manager) => {
 
 let createEngineerCard = (Engineer) => {
     return `
-    <div class="card" style="width: 18rem">
-        <div class="card-header">
+    <div class="card m-2" style="width: 20rem">
+        <div class="card-header bg-info">
+            <h6 class="card-text"></i>${Engineer.getTitle()}</h6>
             <h3 class="card-title">${Engineer.getName()}</h3>
-            <h6 class="card-text"><i class="fa fa-laptop"></i>${Engineer.getTitle()}</h6>
         </div>
         <div class="card-body">
             <ul class="list-group">
@@ -62,10 +62,10 @@ let createEngineerCard = (Engineer) => {
 
 let createInternCard = (Intern) => {
     return `
-    <div class="card" style="width: 18rem">
-        <div class="card-header">
+    <div class="card m-2" style="width: 20rem">
+        <div class="card-header bg-info">
+            <h6 class="card-text"></i>${Intern.getTitle()}</h6>
             <h3 class="card-title">${Intern.getName()}</h3>
-            <h6 class="card-text"><i class="fa fa-graduation-cap"></i>${Intern.getTitle()}</h6>
         </div>
         <div class="card-body">
             <ul class="list-group">
@@ -84,18 +84,18 @@ function teamTemplate(team) {
     <!DOCTYPE html>
     <html lang="en">
     <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-      <title>My Team</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <title>Team Organizer</title>
     </head>
     <body>
-    <div class="jumbotron jumbotron-fluid bg-warning">
-      <div class="container">
-        <h1 class="display-4 text-center">My Team</h1>
-      </div>
+    <div class="jumbotron jumbotron-fluid bg-primary">
+        <div class="container">
+            <h1 class="display-4 text-center">Team Organizer</h1>
+        </div>
     </div>
     <div class="d-flex flex-row flex-wrap justify-content-center">
     ${createCards(team)}
