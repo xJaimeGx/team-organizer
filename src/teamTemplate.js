@@ -46,7 +46,7 @@ let createEngineerCard = (Engineer) => {
     return `
     <div class="card m-2" style="width: 20rem">
         <div class="card-header bg-info">
-            <h6 class="card-text"></i>${Engineer.getTitle()}</h6>
+            <h6 class="card-text">${Engineer.getTitle()}</h6>
             <h3 class="card-title">${Engineer.getName()}</h3>
         </div>
         <div class="card-body">
@@ -64,7 +64,7 @@ let createInternCard = (Intern) => {
     return `
     <div class="card m-2" style="width: 20rem">
         <div class="card-header bg-info">
-            <h6 class="card-text"></i>${Intern.getTitle()}</h6>
+            <h6 class="card-text">${Intern.getTitle()}</h6>
             <h3 class="card-title">${Intern.getName()}</h3>
         </div>
         <div class="card-body">
