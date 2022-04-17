@@ -5,4 +5,5 @@ test('Shows an object with name and id', () => {
     const intern = new Intern(333, 'Stan')
       expect(intern.name).toEqual('Stan')
       expect(intern.id).toEqual(333)
+      expect(intern.email).toEqual("stan@gmail.com")
 });
