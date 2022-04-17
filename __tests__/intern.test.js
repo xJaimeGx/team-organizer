@@ -1,9 +1,13 @@
 const { test, expect } = require('@jest/globals');
+const { describe } = require('yargs');
 const Intern = require('../lib/intern.js');
 
-test('Shows an object with name and id', () => {
-    const intern = new Intern(333, 'Stan')
-      expect(intern.name).toEqual('Stan')
-      expect(intern.id).toEqual(333)
-      expect(intern.email).toEqual("stan@gmail.com")
+describe('Interns', () => {
+  describe('Generated', () => {
+    it('Show an object, name and id', () => {
+      const intern = new Intern('Stan', 333)
+        expect(intern.name).toEqual('Stan')
+        expect(intern.id).toEqual(333)
+    })
+  })
 });

@@ -1,10 +1,13 @@
 const { test, expect } = require('@jest/globals');
-const { getMaxListeners } = require('process');
+const { describe } = require('yargs');
 const Employee = require('../lib/employee.js');
 
-test('Shows an object with name and id', () => {
-    const employee = new Employee(111, 'Susan')
-      expect(employee.name).toEqual('Susan')
-      expect(employee.id).toEqual(111)
-      expect(employee.email).toEqual("sus@gmail.com")
+describe('Employees', () => {
+  describe('Generated', () => {
+    it('Show an object, name and id', () => {
+      const employee = new Employee('Susan', 111)
+        expect(employee.name).toEqual('Susan')
+        expect(employee.id).toEqual(111)
+    })
+  })
 });

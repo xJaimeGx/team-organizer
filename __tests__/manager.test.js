@@ -1,9 +1,13 @@
-const { test, expect } = require('@jest/globals');
+const { it, expect } = require('@jest/globals');
+const { describe } = require('yargs');
 const Manager = require('../lib/manager.js');
 
-test('Shows an object with name and id', () => {
-    const manager = new Manager(444, 'Cynthia')
-      expect(manager.name).toEqual('Cynthia')
-      expect(manager.id).toEqual(444)
-      expect(manager.email).toEqual("cyn@gmail.com")
+describe('Managers', () => {
+  describe('Generated', () => {
+    it('Show an object, name and id', () => {
+      const manager = new Manager('Cynthia', 444)
+        expect(manager.name).toEqual('Cynthia')
+        expect(manager.id).toEqual(444)
+    })
+  })
 });
