@@ -3,7 +3,9 @@ const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
+const teamTemplate = require('./src/teamTemplate');
 
+team = [];
 const managerQuestions = () => {
     inquirer.prompt([
         {
@@ -37,7 +39,20 @@ const managerQuestions = () => {
             choices: ['Engineer', 'Intern', 'I will not be adding any members'],
         }
     ])
-    
+    .then((managerResponses) => {
+        const manager = new Manager(managerResponses.name, managerResponses.id, managerResponses.email, managerResponses.officeNum)
+        team.push(manager)
+        switch(managerResponses.newMember) {
+            case 'Engineer':
+                engineerQuestions();
+                break;
+            case 'Intern':
+                internQuestions();
+                break;
+            default:
+                writeToFile(teamTemplate(team))
+        }
+    });
 };
 
 const engineerQuestions = () => {
@@ -73,7 +88,20 @@ const engineerQuestions = () => {
             choices: ['Engineer', 'Intern', 'I will not be adding any members'],
         }
     ])
-    
+    .then((engineerResponses) => {
+        const engineer = new Engineer(engineerResponses.name, engineerResponses.id, engineerResponses.email, engineerResponses.github)
+        team.push(engineer)
+        switch(engineerResponses.newMember) {
+            case 'Engineer':
+                engineerQuestions();
+                break;
+            case 'Intern':
+                internQuestions();
+                break;
+            default:
+                writeToFile(teamTemplate(team))
+        }
+    });
 };
 
 const internQuestions = () => {
@@ -109,8 +137,27 @@ const internQuestions = () => {
             choices: ['Engineer', 'Intern', 'I will not be adding any members'],
         }
     ])
-    
+    .then((internResponses) => {
+        const intern = new Intern(internResponses.name, internResponses.id, internResponses.email, internResponses.school)
+        team.push(intern)
+        switch(internResponses.newMember) {
+            case 'Engineer':
+                engineerQuestions();
+                break;
+            case 'Intern':
+                internQuestions();
+                break;
+            default:
+                writeToFile(teamTemplate(team))
+        }
+    });
 };
 
 managerQuestions();
 
+function writeToFile(filename, data) {
+    fs.writeToFile(filename, data, (err) => {
+        if(err) throw err;
+        console.log('File was Saved!')
+    })
+};
