@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
-const fs = require('fs');
 const Manager = require('./lib/manager');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
+const fs = require('fs');
 const teamTemplate = require('./src/teamTemplate');
 
 team = [];
@@ -50,7 +50,7 @@ const managerQuestions = () => {
                 internQuestions();
                 break;
             default:
-                writeToFile(teamTemplate(team))
+                writeToFile('dist/index.html', teamTemplate(team))
         }
     });
 };
@@ -99,7 +99,7 @@ const engineerQuestions = () => {
                 internQuestions();
                 break;
             default:
-                writeToFile(teamTemplate(team))
+                writeToFile('dist/index.html', teamTemplate(team))
         }
     });
 };
@@ -148,7 +148,7 @@ const internQuestions = () => {
                 internQuestions();
                 break;
             default:
-                writeToFile(teamTemplate(team))
+                writeToFile('dist/index.html', teamTemplate(team))
         }
     });
 };
@@ -156,8 +156,8 @@ const internQuestions = () => {
 managerQuestions();
 
 function writeToFile(filename, data) {
-    fs.writeToFile(filename, data, (err) => {
+    fs.writeFile(filename, data, (err) => {
         if(err) throw err;
-        console.log('File was Saved!')
-    })
+        console.log('File was saved successfully!')
+    });
 };
